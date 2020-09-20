@@ -6,14 +6,19 @@ function find(){
     const regex = /[\s.,\/ -]/;
 
     let tag = [];
-    text1 = text1.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
-    text2 = text2.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
-    text3 = text3.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
-
     
-    tag.push(...text1.split(regex));
-    tag.push(...text2.split(regex));
-    tag.push(...text3.split(regex));
+
+    if(text1){
+        tag.push(...text1.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().split(regex));
+    }
+    if(text2){
+        tag.push(...text2.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().split(regex));
+    }
+    if(text3){
+        tag.push(...text3.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().split(regex));
+    }
+    
+   
     
 
     
